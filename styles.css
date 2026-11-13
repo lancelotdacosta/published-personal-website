@@ -192,3 +192,7 @@ main.content {
 .faq summary { cursor: pointer; font-weight: 500; }
 .faq[open] summary { margin-bottom: 0.5rem; }
 .faq summary { color: var(--bs-body-color, #343a40); }
+
+/* Keep the top bar light in every browser (Quarto marks the navbar as a dark theme,
+   which Safari can pick up to tint its toolbar black). */
+nav.navbar { color-scheme: light; }
