@@ -23,6 +23,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
 
 
@@ -71,36 +72,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <meta name="theme-color" content="#f8f9fa">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -171,7 +145,7 @@ window.Quarto = {
 <div class="home-grid">
 <section id="hi-im-lance" class="level1 unnumbered unlisted home-text">
 
-<p>I am a mathematician working toward understanding and building intelligence. My work formalized an influential theory of brain function, and <a href="./research.html">I now use these ideas to develop AI that learns like we do</a>: by actively exploring and building models of its world, an approach I call <em>active world modeling</em>.</p>
+<p>I am a mathematician working toward understanding and building intelligence. My work formalized an influential theory of brain function, and <a href="./research.html">I now use these ideas to develop AI that learns like we do</a>: by actively exploring and building models of the world, an approach I call <em>active world modeling</em>.</p>
 <p>Currently I work as a postdoc at the <a href="https://is.mpg.de/en">Max Planck Institute for Intelligent Systems</a> with <a href="https://scholar.google.com/citations?user=DZ-fHPgAAAAJ&amp;hl=en">Bernhard Schölkopf</a>, and I lead <a href="./research.html#atom">ATOM</a>, a focused research community of students and researchers working on these questions. Previously, I worked at VERSES with <a href="https://scholar.google.com/citations?user=q_4u0aoAAAAJ&amp;hl=en">Karl Friston</a> and interned at MILA with <a href="https://scholar.google.com/citations?user=kukA0LcAAAAJ&amp;hl=en">Yoshua Bengio</a>.</p>
 <p>I have authored over 50 papers across artificial intelligence, mathematics, physics and neuroscience, and received the Best Maths PhD Thesis Prize from Imperial College London in 2025, a Best Paper award from Entropy, and excellence awards from the American Physical Society, G-Research, UK’s EPSRC, Luxembourg’s National Research Fund, Imperial College London, and others.</p>
 <p>Get in touch 📩: <a href="assets/Lancelot_Da_Costa_CV.pdf" class="email-gate" data-label="Show email" data-reveal="address" target="_blank" title="My email address is in my CV">email me via my CV</a></p>
@@ -190,7 +164,6 @@ window.Quarto = {
 <h2 data-anchor-id="news">News</h2>
 <p>Read about my research on <a href="./research.html">active world modeling</a>.</p>
 <p>Interested in joining? ➡ Please read <a href="./opportunities.html">this</a> and contact me!</p>
-
 
 
 </section>

@@ -23,6 +23,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
 
 
@@ -71,36 +72,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <meta name="theme-color" content="#f8f9fa">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -187,10 +161,10 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p><em>What I cannot create, I do not understand.</em> (Richard Feynman)</p>
 </blockquote>
-<p>I work on machines that learn like we do: by actively exploring and building models of their world, an approach I call <strong>active world modeling</strong>.</p>
+<p>I work on machines that learn like we do: by actively exploring and building models of the world, an approach I call <strong>active world modeling</strong>.</p>
 <p>A toddler putting a new object in their mouth is running an experiment: testing what it is made of and how it behaves, and revising their model of it. State-of-the-art AI mostly learns differently, by passively absorbing vast amounts of data.</p>
 <p>Learning in nature seems to follow general principles, on which developmental psychology, cognitive science, neuroscience and physics increasingly converge. My research bet is that <a href="https://arxiv.org/abs/2410.00258">building on these principles</a> can give us AI that learns autonomously, continually and open-endedly from far less data and compute, generalizes and adapts when the world changes, and is aligned, safer and more robust.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/qxEfcrmTWO4" title="How can we add knowledge to AI agents? (Machine Learning Street Talk)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/qxEfcrmTWO4?autoplay=1" srcdoc="&lt;style&gt;*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 .5em black}&lt;/style&gt;&lt;a href=&quot;https://www.youtube.com/embed/qxEfcrmTWO4?autoplay=1&quot;&gt;&lt;img src=&quot;https://i.ytimg.com/vi/qxEfcrmTWO4/hqdefault.jpg&quot; alt=&quot;Play video&quot;&gt;&lt;span&gt;&amp;#9654;&lt;/span&gt;&lt;/a&gt;" loading="lazy" title="How can we add knowledge to AI agents? (Machine Learning Street Talk)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <div class="video-caption">
 <p>This Machine Learning Street Talk interview discusses my research. Also available on <a href="https://podcasts.apple.com/us/podcast/multi-agent-learning-lancelot-da-costa/id1510472996?i=1000633744760">Apple Podcasts</a>.</p>
 </div>
@@ -246,7 +220,6 @@ window.Quarto = {
 <div class="small-note">
 <p>*Updated sparingly.</p>
 </div>
-
 
 
 </section>
