@@ -196,3 +196,7 @@ main.content {
 /* Keep the top bar light in every browser (Quarto marks the navbar as a dark theme,
    which Safari can pick up to tint its toolbar black). */
 nav.navbar { color-scheme: light; }
+
+/* Publications: award / cover-article icons replace the bullet of their item */
+li:has(> .pub-mark), li:has(> p > .pub-mark) { list-style: none; }
+.pub-mark { display: inline-block; width: 1.25em; margin-left: -1.25em; color: #6c757d; }
