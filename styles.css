@@ -1,0 +1,194 @@
+/* Keep this minimal; expand as you iterate. */
+
+.pdf-embed object {
+  width: 100%;
+  height: 95vh;
+  border: 0;
+}
+
+/* Zen reading width: roughly an A4 page. */
+main.content {
+  max-width: 210mm;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Let PDF embeds be wider than the text column (but still responsive). */
+.pdf-embed {
+  width: min(260mm, calc(100vw - 2rem));
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Balance the spacing around each post's separator line: the theme
+   only adds space below the line (margin-bottom), so add equal space
+   above it. */
+.quarto-listing-default .quarto-post {
+  padding-bottom: 1.5em;
+}
+
+/* Draw a divider above the first listing item too, matching the
+   separators the theme places between posts. */
+.quarto-listing-default .quarto-post:first-child {
+  border-top: 1px solid #dee2e6;
+  padding-top: 1.5em;
+  margin-top: 1.5em;
+}
+
+/* LaTeX theorem-like environments converted from post.tex */
+.theorem, .corollary, .lemma, .proposition, .definition {
+  border-left: 3px solid #2780e3;
+  background: rgba(39, 128, 227, 0.05);
+  padding: 0.6em 1em;
+  margin: 1.2em 0;
+}
+.example, .remark {
+  border-left: 3px solid #adb5bd;
+  padding: 0.4em 1em;
+  margin: 1.2em 0;
+}
+.proof { margin: 0.8em 0 1.4em; }
+
+/* Media page: two-column grid of videos */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.video-grid p { font-size: 0.9em; color: #6c757d; }
+
+/* Home page: text on the left, small photo column on the right (stacks on phones) */
+.home-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 200px;
+  gap: 2.5rem;
+  align-items: start;
+}
+.home-photo img {
+  width: 100%;
+  border-radius: 6px;
+}
+.home-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+  margin: 0.6rem 0;
+}
+.home-links p { display: contents; }
+.home-links a {
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 0.15em 0.55em;
+  font-size: 0.8em;
+  color: #495057;
+  text-decoration: none;
+}
+.home-links a:hover { border-color: #2780e3; color: #2780e3; }
+.home-contact { text-align: center; font-size: 0.85em; }
+.home-contact p { margin-bottom: 0.4rem; }
+@media (max-width: 768px) {
+  .home-grid { grid-template-columns: 1fr; }
+  .home-photo { order: -1; max-width: 200px; margin: 0 auto; }
+}
+
+/* Email gate (scripts/email-gate.html): the address is revealed after a quick sum */
+.email-gate-wrap { position: relative; white-space: nowrap; }
+.email-gate.is-locked[data-label] {
+  display: inline-block;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 0 0.55em;
+  font-size: 0.85em;
+  color: #495057;
+  text-decoration: none;
+}
+.email-gate.is-locked[data-label]:hover { border-color: #2780e3; color: #2780e3; }
+.email-gate-pop {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 0;
+  z-index: 1050;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  white-space: normal;
+  text-align: left;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  background: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.08);
+  padding: 0.6rem 0.75rem;
+}
+.email-gate-pop form { margin: 0; }
+.email-gate-title { margin: 0 0 0.2rem; font-weight: 600; color: #343a40; }
+.email-gate-pop label { display: block; margin-bottom: 0.4rem; color: #495057; }
+.email-gate-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
+.email-gate-pop input {
+  width: 4em;
+  font-size: 16px; /* 16px stops iOS zooming in on focus */
+  padding: 0.15rem 0.45rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+.email-gate-pop input:focus {
+  outline: none;
+  border-color: #2780e3;
+  box-shadow: 0 0 0 0.2rem rgba(39, 128, 227, 0.25);
+}
+.email-gate-pop button {
+  font-size: 0.85rem;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid #2780e3;
+  border-radius: 4px;
+  background: #2780e3;
+  color: #fff;
+}
+.email-gate-pop button.email-gate-copy { background: transparent; color: #2780e3; }
+.email-gate-msg { margin: 0.35rem 0 0; font-size: 0.8rem; color: #ff0039; }
+.email-gate-msg:empty { display: none; }
+.email-gate-addr { font-weight: 500; word-break: break-all; }
+
+/* Caption under embedded videos */
+.video-caption {
+  font-size: 0.85em;
+  color: #6c757d;
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Email gate: single "I'm human" checkbox */
+.email-gate-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.95em;
+  margin: 0;
+}
+.email-gate-check input { width: 1.1rem; height: 1.1rem; cursor: pointer; }
+
+/* Small note under a paragraph (e.g. "*Updated sparingly." after CV links) */
+.small-note { font-size: 0.8em; color: #6c757d; margin-top: -0.6rem; }
+
+/* Opportunities: open project cards */
+.project-card {
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 1rem 1.25rem 0.25rem;
+  margin: 1.25rem 0;
+}
+.project-card h3 { margin-top: 0.2rem; }
+.project-tag { font-size: 0.8em; color: #2780e3; }
+.email-gate-cc { font-size: 0.8em; color: #6c757d; margin: 0.4rem 0 0; word-break: break-all; }
+
+.project-details { margin: 0.5rem 0 1rem; }
+.project-details summary { cursor: pointer; color: #2780e3; font-size: 0.95em; }
+.project-details[open] summary { margin-bottom: 0.6rem; }
+
+/* FAQ drop-downs */
+.faq { border-bottom: 1px solid #dee2e6; padding: 0.6rem 0; }
+.faq summary { cursor: pointer; font-weight: 500; }
+.faq[open] summary { margin-bottom: 0.5rem; }
+.faq summary { color: var(--bs-body-color, #343a40); }
