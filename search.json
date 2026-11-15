@@ -217,18 +217,18 @@
     "text": "Conclusion\nFast structure learning constructs an abstract predictive hierarchy. This hierarchy can support prediction, hierarchical inference, and empirical priors across scales. It should not automatically be interpreted as an abstract control hierarchy.\nThe computational motivation for hierarchical planning is that a high-level transition can stand for a lower-level episode. A flat planner over horizon \\(H^{(2)}H^{(1)}\\) faces a primitive policy space on the order of\n\\[\n|\\mathcal U^{(1)}|^{H^{(2)}H^{(1)}}.\n\\]\nAn ideal two-level planner would replace this with a cost closer to\n\\[\n|\\mathcal U^{(2)}|^{H^{(2)}}\n+\nH^{(2)}|\\mathcal U^{(1)}|^{H^{(1)}}.\n\\]\nThis reduction is meaningful only if the high-level action space is much smaller than the space of lower-level policy fragments:\n\\[\n|\\mathcal U^{(2)}|\n\\ll\n|\\mathcal U^{(1)}|^{H^{(1)}}.\n\\]\nFast structure learning can produce a small empirical set of second-level path labels,\n\\[\n\\mathcal P_{\\mathrm{FSL}}^{(2)}\n\\subseteq\n(\\mathcal U^{(1)})^{H^{(1)}}.\n\\]\nHowever, a small empirical path set is not necessarily a valid option set. The computational savings are justified only if the learned paths are representative, task-relevant, correctly separated into controllable and exogenous modes, and supplied with lower-level implementations when treated as controllable options.\nThe main limitations are therefore:\n\nThe compression is statistical and depends on the representativeness of the training stream.\nLow-level preferences must be lifted through a suitable decoder or value map.\nPreference lifting can become approximate if value depends on combinations of factors but preferences are represented separately over those factors.\nLearned path labels \\(u^{(2)}\\) must be classified as controllable options \\(\\beta^{(2)}\\), exogenous transition modes, or mixed statistical transitions.\nContextual variables may need to modulate the value and consequences of controllable options.\n\nThe concise conclusion is:\n\\[\n\\text{fewer learned paths}\n\\neq\n\\text{valid planning abstraction}.\n\\]\nEquivalently, RGMs learn an abstract predictive hierarchy, whereas hierarchical planning requires an abstract control hierarchy.\nThis distinction preserves the value of the RGM construction while clarifying its current limitation. RGMs build hierarchical models of observed structure. Additional mechanisms, such as those mentioned in this post, are required before the learned hierarchy can be treated as a hierarchy of valid actions."
   },
   {
-    "objectID": "media.html#media-inquiries",
-    "href": "media.html#media-inquiries",
-    "title": "Media",
-    "section": "Media inquiries",
-    "text": "Media inquiries\nPlease contact me with a brief description by email with the subject “[Media] XXX”."
-  },
-  {
     "objectID": "media.html#featured-media",
     "href": "media.html#featured-media",
     "title": "Media",
     "section": "Featured Media",
     "text": "Featured Media\n\n\n Active Inference Insights 010: Mathematics, Time, Selfhood (Active Inference Institute)\n\n\n ActInf Livestream #052.1: Geometric Methods for Sampling, Optimisation, Inference and Adaptive Agents (Active Inference Institute)\n\n\n A global brain theory, stochastic thermodynamics and applications (Mathematics of Data Science)\n\n\n ActInf Livestream #058.1: From pixels to planning: scale-free active inference (Active Inference Institute)\n\n\n ActInf Livestream #026.1: Bayesian Mechanics for Stationary Processes (Active Inference Institute)\n\n\n ActInf Livestream #026.2: Bayesian Mechanics for Stationary Processes (Active Inference Institute)"
+  },
+  {
+    "objectID": "media.html#media-inquiries",
+    "href": "media.html#media-inquiries",
+    "title": "Media",
+    "section": "Media inquiries",
+    "text": "Media inquiries\nPlease contact me with a brief description by email with the subject “[Media] XXX”."
   },
   {
     "objectID": "opportunities.html",
